@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100svh;
+}
+
+::selection {
+  background: #c96f2e;
+  color: #171018;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.reel {
+  animation: spin-slow 6s linear infinite;
+  transform-origin: center;
+}
+
+.reel-left {
+  animation-duration: 5s;
+}
+
+.reel-right {
+  animation-duration: 7s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reel {
+    animation: none;
+  }
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #c96f2e;
+  outline-offset: 3px;
+}
